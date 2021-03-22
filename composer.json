@@ -17,7 +17,10 @@
     "require": {},
     "autoload": {
         "psr-4": {
-          "CustomTypes\\": "/src"
+          "CustomTypes\\": "/src/CustomTypes/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
     }
 }

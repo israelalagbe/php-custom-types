@@ -2,7 +2,7 @@
 
 namespace CustomTypes;
 
-abstract class Iterable extends Type {
+abstract class _Iterable extends _Type {
 	
 	public function length(){
 		return $this->count();

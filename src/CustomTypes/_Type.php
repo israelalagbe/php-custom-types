@@ -2,7 +2,7 @@
 
 namespace CustomTypes;
 
-abstract class Type implements \Serializable {
+abstract class _Type implements \Serializable {
 	
 	protected $data;
 	

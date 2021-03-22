@@ -2,14 +2,19 @@
 
 namespace CustomTypes;
 
-class Array2 extends ArrayObject {
+class _Array extends _ArrayObject {
 	
 	public function __construct(){
-		parent::__construct(func_get_args());
+		$args = func_get_args();
+
+		if(count($args) === 1 && \is_array(@$args[0])){
+			$args = $args[0];
+		}
+		parent::__construct($args);
 	}
 	
 	public static function from($data = null){
-		$array = new Array2;
+		$array = new _Array;
 		return $array->setData($data);
 	}
 	

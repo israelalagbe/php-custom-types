@@ -2,7 +2,7 @@
 
 namespace CustomTypes;
 
-class ArrayObject extends Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
+class _ArrayObject extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
 	
 	public function __construct($data = null){
 		if (method_exists($data, 'toArray')) $data = $data->toArray();
