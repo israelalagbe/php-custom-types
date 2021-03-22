@@ -2,7 +2,7 @@
 
 namespace CustomTypes;
 
-class String extends Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
+class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
 	
 	public function __construct($data){
 		if (is_array($data)) $data = implode($data);
