@@ -17,6 +17,14 @@ class _Array extends _ArrayObject {
 		$array = new _Array;
 		return $array->setData($data);
 	}
+
+	public function __set($name, $val) {
+        $this->data[$name] = $val;
+    }
+
+    public function __get($name) {
+        return $this->data[$name];
+    }
 	
 	// Static
 	protected static function getClassName(){
