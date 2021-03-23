@@ -17,7 +17,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-          "CustomTypes\\": "/src/CustomTypes/"
+            "CustomTypes\\": "/src/CustomTypes/",
+            "Tests\\": "/Tests/"
         }
     },
     "require-dev": {
