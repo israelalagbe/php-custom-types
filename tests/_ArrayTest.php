@@ -1,9 +1,6 @@
 <?php
 
-require('vendor/autoload.php');
-
 use CustomTypes\_Array;
-
 class _ArrayTest extends \PHPUnit\Framework\TestCase
 {
     public function testContructor()
