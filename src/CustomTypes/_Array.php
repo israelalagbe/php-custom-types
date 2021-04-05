@@ -17,8 +17,6 @@ class _Array  extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 			$args = $args[0]->toArray();
 		}
 
-		if (method_exists($args, 'toArray')) $args = $args->toArray();
-		
 		$this->setData($args ?: array());
 	}
 	
@@ -162,7 +160,7 @@ class _Array  extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 		}
 	}
 	
-	public function offsetGet($key){
+	public function &offsetGet($key){
 		return array_key_exists($key, $this->data) ? $this->data[$key] : null;
 	}
 	
