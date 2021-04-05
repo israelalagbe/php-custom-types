@@ -34,7 +34,7 @@ abstract class _Type implements \Serializable {
 	}
 	
 	// Static
-	public static function from($data = null){
+	public static function from($data){
 		$name = static::getClassName();
 		return new $name($data);
 	}

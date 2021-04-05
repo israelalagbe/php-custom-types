@@ -111,7 +111,7 @@ class _ArrayObject extends _Iterable implements \IteratorAggregate, \ArrayAccess
 	}
 	
 	// Cast
-	public function toArray(){
+	public function toArray(): array{
 		return $this->data;
 	}
 	

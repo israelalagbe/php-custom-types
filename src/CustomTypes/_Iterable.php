@@ -5,7 +5,7 @@ namespace CustomTypes;
 abstract class _Iterable extends _Type {
 	
 	public function length(){
-		return $this->count();
+		return count($this->data);
 	}
 	
 	// Iterator Methods
