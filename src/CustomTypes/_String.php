@@ -2,6 +2,9 @@
 
 namespace CustomTypes;
 
+use ArrayIterator;
+use CustomTypes\_Iterable;
+
 class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
 	
 	public function __construct($data){
@@ -27,7 +30,7 @@ class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 		else if ($separator === '') $data = $this->toArray();
 		else $data = explode($separator, $this->data);
 		
-		return new ArrayObject($data);
+		return new _Array($data);
 	}
 	
 	public function clear(){
@@ -68,7 +71,7 @@ class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 	
 	// IteratorAggregate
 	public function getIterator(){
-		return new \ArrayIterator($this->toArray());
+		return new ArrayIterator($this->toArray());
 	}
 	
 	// ArrayAccess
@@ -91,6 +94,10 @@ class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 	// Countable
 	public function count(){
 		return strlen($this->data);
+	}
+
+	public static function from($data = null): _String{
+		return parent::from($data);
 	}
 	
 	// Static

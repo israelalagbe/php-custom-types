@@ -2,6 +2,8 @@
 
 namespace CustomTypes;
 
+use InvalidArgumentException;
+
 class _Array extends _ArrayObject {
 	
 	public function __construct(){
@@ -13,10 +15,19 @@ class _Array extends _ArrayObject {
 		parent::__construct($args);
 	}
 	
-	public static function from($data = null){
-		$array = new _Array;
-		return $array->setData($data);
+	public static function from($data): _Array {
+		if(!is_array($data) && !$data instanceof _Array){
+			throw new InvalidArgumentException("Argument passed to from() must be an array or an instance of _Array");
+		}
+		return parent::from($data);
 	}
+
+	//
+	public function map($fn){
+		return parent::map($fn);
+	}
+
+
 
 	public function __set($name, $val) {
         $this->data[$name] = $val;
