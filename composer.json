@@ -2,7 +2,7 @@
     "name": "israelalagbe/php-custom-types",
     "description": "This package holds some custom PHP types such as Array and String. It provides functionalities similar to array and string in Javascript.",
     "type": "library",
-    "license": "Apache",
+    "license": "MIT",
     "authors": [
         {
             "name": "Israel Alagbe",
