@@ -35,4 +35,4 @@ composer test
 License
 ----
 
-APACHE 2.0
+MIT
