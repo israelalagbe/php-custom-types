@@ -1,6 +1,5 @@
 <?php
-
-namespace CustomTypes;
+namespace IsraelAlagbe\CustomTypes;
 
 abstract class _Type implements \Serializable {
 	
