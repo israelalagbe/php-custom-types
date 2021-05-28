@@ -124,6 +124,14 @@ class _Array  extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 	public function pop(){
 		return array_pop($this->data);
 	}
+
+	public function first(){
+		return reset($this->data);
+	}
+
+	public function last(){
+		return end($this->data);
+	}
 	
 	// Shift
 	public function shift(){
