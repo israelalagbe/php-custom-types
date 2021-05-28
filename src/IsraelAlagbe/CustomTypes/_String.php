@@ -1,9 +1,8 @@
 <?php
-
-namespace CustomTypes;
+namespace IsraelAlagbe\CustomTypes;
 
 use ArrayIterator;
-use CustomTypes\_Iterable;
+use IsraelAlagbe\CustomTypes\_Iterable;
 
 class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Countable {
 	

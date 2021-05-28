@@ -1,6 +1,6 @@
 <?php
 
-use CustomTypes\_Array;
+use IsraelAlagbe\CustomTypes\_Array;
 class _ArrayTest extends \PHPUnit\Framework\TestCase
 {
     public function testContructor()

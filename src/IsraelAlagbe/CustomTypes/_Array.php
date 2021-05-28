@@ -1,6 +1,5 @@
 <?php
-
-namespace CustomTypes;
+namespace IsraelAlagbe\CustomTypes;
 
 use ArrayObject;
 use InvalidArgumentException;
