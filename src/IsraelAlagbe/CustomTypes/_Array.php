@@ -167,7 +167,7 @@ class _Array  extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 		}
 	}
 	
-	public function &offsetGet($key){
+	public function offsetGet($key){
 		return array_key_exists($key, $this->data) ? $this->data[$key] : null;
 	}
 	

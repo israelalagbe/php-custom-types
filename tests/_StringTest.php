@@ -5,7 +5,7 @@ use IsraelAlagbe\CustomTypes\_String;
 
 class __StringTest extends \PHPUnit\Framework\TestCase{
     public function setUp():void{
-        // parent::setUp();
+        parent::setUp();
 		$this->string = _String::from('abc');
 	}
 	
