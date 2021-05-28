@@ -13,13 +13,13 @@
             "email": "aeadedoyin@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "require": {
         "php": ">=5.6"
     },
     "autoload": {
         "psr-4": {
-            "CustomTypes\\": "/src/CustomTypes/",
+            "IsraelAlagbe\\CustomTypes\\": "/src/IsraelAlagbe/CustomTypes/",
             "Tests\\": "/Tests/"
         },
         "classmap": [
