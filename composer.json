@@ -13,7 +13,7 @@
             "email": "aeadedoyin@gmail.com"
         }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.6"
     },
