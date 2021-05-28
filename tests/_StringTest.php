@@ -43,6 +43,13 @@ class __StringTest extends \PHPUnit\Framework\TestCase{
 		$this->assertEquals($string->trim()->toString(), 'abc');
 		$this->assertNotSame($string, $string->trim());
 	}
+
+    public function testReplace(){
+		$string = _String::from(' abc- ');
+		$this->assertEquals($string->replace(' ', '')->toString(), 'abc-');
+        $this->assertEquals($string->replace([' ', '-'], '')->toString(), 'abc');
+        $this->assertEquals($string->replace([' ', '-'], [':', ''])->toString(), ':abc:');
+	}
 	
 	public function testCamelCase(){
 		$this->assertEquals(_String::from('i-like-cookies')->camelCase()->toString(), 'iLikeCookies');

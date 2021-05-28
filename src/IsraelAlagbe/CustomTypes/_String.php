@@ -39,7 +39,15 @@ class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 	public function reverse(){
 		return static::from(strrev($this->data));
 	}
-	
+
+	/**
+	 * @param string|array $search
+	 * @param string|array $replacement
+	 */
+	public function replace($search, $replacement){
+		return static::from(str_replace($search, $replacement, $this->data));
+	}
+
 	public function trim(){
 		return static::from(trim($this->data));
 	}
