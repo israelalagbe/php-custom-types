@@ -5,7 +5,7 @@ This package holds some custom PHP types such as Array and String. It provides f
 Require this package
 
 ```sh
-composer require israelalagbe/custom-php-types
+composer require israelalagbe/php-custom-types
 ```
 ## Array Types
 ### Basic Usage
