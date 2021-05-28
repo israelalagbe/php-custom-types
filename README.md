@@ -9,9 +9,10 @@ composer require israelalagbe/custom-php-types
 ```
 ## Array Types
 ### Basic Usage
-You can .
+You can use it the following way
 
 ```php
+use IsraelAlagbe\CustomTypes\_Array;
 $items = new _Array([1,2]); // or _Array(1, 2)
 $items->push(4); // [1,2,4]
 $items->map(function($item) {
