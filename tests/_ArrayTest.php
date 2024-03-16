@@ -24,6 +24,14 @@ class _ArrayTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($arr->item, 'value');
     }
 
+    public function testGetterItem()
+    {
+        $arr = new _Array([
+            'value'
+        ]);
+        $this->assertEquals('value', $arr->item(0));
+    }
+
     public function testSetter()
     {
         $arr = new _Array();
@@ -38,5 +46,30 @@ class _ArrayTest extends \PHPUnit\Framework\TestCase
 
         $arr->hello = 'world';
         $this->assertEquals($arr->hello, 'world');
+    }
+
+    public function testMultiDimensionGetter()
+    {
+        $arr = new _Array([
+            'item' => [
+                'subitem' => 'value'
+            ]
+        ]);
+
+        $this->assertEquals($arr->item->subitem, 'value');
+    }
+
+    public function testMultiDimensionIterator()
+    {
+        $arr = new _Array([
+            'item' => [
+                'subitem' => 'value'
+            ]
+        ]);
+        $i = 1;
+        foreach($arr as $val) {
+            $this->assertInstanceOf(_Array::class, $val);
+            $this->assertEquals($val->subitem, 'value');
+        }
     }
 }
