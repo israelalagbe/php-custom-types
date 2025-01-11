@@ -7,10 +7,6 @@
         {
             "name": "Israel Alagbe",
             "email": "israelalagbe53@gmail.com"
-        },
-        {
-            "name": "Adedoyin Akande",
-            "email": "aeadedoyin@gmail.com"
         }
     ],
     "minimum-stability": "dev",
