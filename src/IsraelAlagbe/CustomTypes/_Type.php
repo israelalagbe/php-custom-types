@@ -1,7 +1,7 @@
 <?php
 namespace IsraelAlagbe\CustomTypes;
 
-abstract class _Type implements \Serializable {
+abstract class _Type {
 	
 	protected $data;
 	
@@ -23,13 +23,13 @@ abstract class _Type implements \Serializable {
 		return $this;
 	}
 	
-	// Serializable
-	public function serialize(){
-		return serialize($this->data);
+	// Serialization
+	public function __serialize(): array {
+		return ['data' => $this->data];
 	}
 	
-	public function unserialize($serialized){
-		$this->data = unserialize($serialized);
+	public function __unserialize(array $data): void {
+		$this->data = $data['data'];
 	}
 	
 	// Static

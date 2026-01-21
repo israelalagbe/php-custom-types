@@ -4,6 +4,7 @@ namespace IsraelAlagbe\CustomTypes;
 
 use ArrayObject;
 use InvalidArgumentException;
+use Traversable;
 
 class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Countable
 {
@@ -33,7 +34,7 @@ class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Cou
         $this->data[$name] = $val;
     }
 
-    public function &__get($name)
+    public function __get($name)
     {
         $value = $this->data[$name];
 				
@@ -188,13 +189,18 @@ class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Cou
     }
 
     // IteratorAggregate
-    public function getIterator()
+    public function getIterator(): Traversable
     {
-        return new \ArrayIterator($this->data);
+        return new \ArrayIterator(array_map(function($val) {
+						if(is_array($val)) {
+								return new self($val);
+						}
+						return $val;
+				}, $this->data));
     }
 
     // ArrayAccess
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         if ($key === null) {
             $this->data[] = $value;
@@ -203,17 +209,17 @@ class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Cou
         }
     }
 
-    public function &offsetGet($key)
+    public function offsetGet($key): mixed
     {
         return array_key_exists($key, $this->data) ? $this->data[$key] : null;
     }
 
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->data);
     }
 
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->data[$key]);
     }
@@ -246,7 +252,7 @@ class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Cou
     }
 
     // Countable
-    public function count()
+    public function count(): int
     {
         return count($this->data);
     }
