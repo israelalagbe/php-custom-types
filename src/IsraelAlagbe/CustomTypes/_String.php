@@ -69,29 +69,29 @@ class _String extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Co
 	}
 	
 	// IteratorAggregate
-	public function getIterator(){
+	public function getIterator(): \Traversable {
 		return new ArrayIterator($this->toArray());
 	}
 	
 	// ArrayAccess
-	public function offsetSet($key, $value){
+	public function offsetSet($key, $value): void {
 		$this->data[$key] = $value;
 	}
 	
-	public function offsetGet($key){
+	public function offsetGet($key): mixed {
 		return !empty($this->data[$key]) ? $this->data[$key] : null;
 	}
 	
-	public function offsetExists($key){
+	public function offsetExists($key): bool {
 		return !empty($this->data[$key]);
 	}
 	
-	public function offsetUnset($key){
+	public function offsetUnset($key): void {
 		$this->data[$key] = null;
 	}
 	
 	// Countable
-	public function count(){
+	public function count(): int {
 		return strlen($this->data);
 	}
 
