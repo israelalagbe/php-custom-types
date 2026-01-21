@@ -209,7 +209,7 @@ class _Array extends _Iterable implements \IteratorAggregate, \ArrayAccess, \Cou
         }
     }
 
-    public function &offsetGet($key)
+    public function offsetGet($key): mixed
     {
         return array_key_exists($key, $this->data) ? $this->data[$key] : null;
     }
