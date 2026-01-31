@@ -1,6 +1,8 @@
 # Custom PHP Types
 This package holds some custom PHP types such as Array and String. It provides functionalities similar to array and string in Javascript.
 
+![Standard PHP vs Custom Types](screenshot.svg)
+
 ## Installation
 Require this package
 
