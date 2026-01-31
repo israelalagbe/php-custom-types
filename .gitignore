@@ -8,3 +8,4 @@ composer.lock
 .phpunit.result.cache
 workspace.code-workspace
 .phpunit.cache/
+.gitignore

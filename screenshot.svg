@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" font-family="Menlo, Consolas, monospace" font-size="14">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d44;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f5a97f" />
+      <stop offset="50%" style="stop-color:#ee99a0" />
+      <stop offset="100%" style="stop-color:#c6a0f6" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="80" fill="#c6a0f6" opacity="0.05"/>
+  <circle cx="1050" cy="300" r="100" fill="#8bd5ca" opacity="0.05"/>
+
+  <!-- Title -->
+  <text x="290" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#f5a97f" filter="url(#glow)">Standard PHP</text>
+  <text x="565" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="url(#titleGradient)" filter="url(#glow)">vs</text>
+  <text x="825" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#8bd5ca" filter="url(#glow)">Custom Types</text>
+
+  <!-- Code block backgrounds -->
+  <rect x="30" y="55" width="520" height="280" rx="12" fill="#11111b" opacity="0.7"/>
+  <rect x="580" y="55" width="490" height="280" rx="12" fill="#11111b" opacity="0.7"/>
+
+  <!-- Left column title -->
+  <text x="290" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#f5a97f">📦 Procedural</text>
+  <!-- Right column title -->
+  <text x="825" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#8bd5ca">⛓️ Chainable</text>
+
+  <!-- Left code block with syntax highlighting -->
+  <text x="50" y="90">
+    <tspan x="50" dy="1.8em"><tspan fill="#c6a0f6">$parts</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#f9e2af">explode</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#a6e3a1">'-'</tspan><tspan fill="#cdd6f4">,</tspan> <tspan fill="#c6a0f6">$str</tspan><tspan fill="#cdd6f4">);</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#c6a0f6">$filtered</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#f9e2af">array_filter</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$parts</tspan><tspan fill="#cdd6f4">,</tspan> <tspan fill="#cba6f7">function</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$item</tspan><tspan fill="#cdd6f4">)</tspan> <tspan fill="#cdd6f4">{</tspan></tspan>
+    <tspan x="90" dy="1.8em"><tspan fill="#cba6f7">return</tspan> <tspan fill="#c6a0f6">$item</tspan> <tspan fill="#89dceb">&gt;</tspan> <tspan fill="#fab387">1</tspan><tspan fill="#cdd6f4">;</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#cdd6f4">});</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#c6a0f6">$mapped</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#f9e2af">array_map</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#cba6f7">function</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$item</tspan><tspan fill="#cdd6f4">)</tspan> <tspan fill="#cdd6f4">{</tspan></tspan>
+    <tspan x="90" dy="1.8em"><tspan fill="#cba6f7">return</tspan> <tspan fill="#c6a0f6">$item</tspan> <tspan fill="#89dceb">*</tspan> <tspan fill="#fab387">2</tspan><tspan fill="#cdd6f4">;</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#cdd6f4">},</tspan> <tspan fill="#c6a0f6">$filtered</tspan><tspan fill="#cdd6f4">);</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#c6a0f6">$joined</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#f9e2af">implode</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#a6e3a1">''</tspan><tspan fill="#cdd6f4">,</tspan> <tspan fill="#c6a0f6">$mapped</tspan><tspan fill="#cdd6f4">);</tspan></tspan>
+    <tspan x="50" dy="1.8em"><tspan fill="#c6a0f6">$pos</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#f9e2af">strpos</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$joined</tspan><tspan fill="#cdd6f4">,</tspan> <tspan fill="#a6e3a1">'needle'</tspan><tspan fill="#cdd6f4">);</tspan></tspan>
+  </text>
+
+  <!-- Right code block with syntax highlighting -->
+  <text x="600" y="90">
+    <tspan x="600" dy="1.8em"><tspan fill="#c6a0f6">$result</tspan> <tspan fill="#89dceb">=</tspan> <tspan fill="#c6a0f6">$str</tspan></tspan>
+    <tspan x="640" dy="1.8em"><tspan fill="#f38ba8">-&gt;</tspan><tspan fill="#89b4fa">split</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#a6e3a1">'-'</tspan><tspan fill="#cdd6f4">)</tspan></tspan>
+    <tspan x="640" dy="1.8em"><tspan fill="#f38ba8">-&gt;</tspan><tspan fill="#89b4fa">filter</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#cba6f7">fn</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$item</tspan><tspan fill="#cdd6f4">)</tspan> <tspan fill="#89dceb">=&gt;</tspan> <tspan fill="#c6a0f6">$item</tspan> <tspan fill="#89dceb">&gt;</tspan> <tspan fill="#fab387">1</tspan><tspan fill="#cdd6f4">)</tspan></tspan>
+    <tspan x="640" dy="1.8em"><tspan fill="#f38ba8">-&gt;</tspan><tspan fill="#89b4fa">map</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#cba6f7">fn</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#c6a0f6">$item</tspan><tspan fill="#cdd6f4">)</tspan> <tspan fill="#89dceb">=&gt;</tspan> <tspan fill="#c6a0f6">$item</tspan> <tspan fill="#89dceb">*</tspan> <tspan fill="#fab387">2</tspan><tspan fill="#cdd6f4">)</tspan></tspan>
+    <tspan x="640" dy="1.8em"><tspan fill="#f38ba8">-&gt;</tspan><tspan fill="#89b4fa">join</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#a6e3a1">''</tspan><tspan fill="#cdd6f4">)</tspan></tspan>
+    <tspan x="640" dy="1.8em"><tspan fill="#f38ba8">-&gt;</tspan><tspan fill="#89b4fa">indexOf</tspan><tspan fill="#cdd6f4">(</tspan><tspan fill="#a6e3a1">'needle'</tspan><tspan fill="#cdd6f4">);</tspan></tspan>
+  </text>
+
+  <!-- Divider with gradient -->
+  <line x1="565" y1="70" x2="565" y2="320" stroke="url(#titleGradient)" stroke-width="2" opacity="0.5"/>
+</svg>
